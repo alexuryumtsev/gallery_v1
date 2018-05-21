@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\CopAlbums" table="cop_albums">
+    <indexes>
+      <index name="alb_category" columns="category"/>
+      <index name="moderator_group" columns="moderator_group"/>
+      <index name="visibility" columns="visibility"/>
+    </indexes>
+    <id name="aid" type="integer" column="aid">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="title" type="string" column="title" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default"/>
+      </options>
+    </field>
+    <field name="description" type="text" column="description" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="visibility" type="integer" column="visibility" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="uploads" type="string" column="uploads" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default">NO</option>
+      </options>
+    </field>
+    <field name="comments" type="string" column="comments" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default">YES</option>
+      </options>
+    </field>
+    <field name="votes" type="string" column="votes" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default">YES</option>
+      </options>
+    </field>
+    <field name="pos" type="integer" column="pos" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="category" type="integer" column="category" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="owner" type="integer" column="owner" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">1</option>
+      </options>
+    </field>
+    <field name="thumb" type="integer" column="thumb" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="keyword" type="string" column="keyword" length="50" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="albPassword" type="string" column="alb_password" length="32" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="albPasswordHint" type="text" column="alb_password_hint" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="moderatorGroup" type="integer" column="moderator_group" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="albHits" type="integer" column="alb_hits" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

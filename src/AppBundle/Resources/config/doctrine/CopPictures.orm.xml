@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\CopPictures" table="cop_pictures">
+    <indexes>
+      <index name="owner_id" columns="owner_id"/>
+      <index name="pic_hits" columns="hits"/>
+      <index name="pic_rate" columns="pic_rating"/>
+      <index name="aid_approved" columns="aid,approved"/>
+      <index name="pic_aid" columns="aid,pid"/>
+    </indexes>
+    <id name="pid" type="integer" column="pid">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="aid" type="integer" column="aid" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="filepath" type="string" column="filepath" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default"/>
+      </options>
+    </field>
+    <field name="filename" type="string" column="filename" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default"/>
+      </options>
+    </field>
+    <field name="filesize" type="integer" column="filesize" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="totalFilesize" type="integer" column="total_filesize" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="pwidth" type="smallint" column="pwidth" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="pheight" type="smallint" column="pheight" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="hits" type="integer" column="hits" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="mtime" type="datetime" column="mtime" nullable="false">
+      <options>
+        <option name="default">1000-01-01 00:00:00</option>
+      </options>
+    </field>
+    <field name="ctime" type="integer" column="ctime" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="ownerId" type="integer" column="owner_id" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="picRating" type="integer" column="pic_rating" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="votes" type="integer" column="votes" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="title" type="string" column="title" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default"/>
+      </options>
+    </field>
+    <field name="caption" type="text" column="caption" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="keywords" type="string" column="keywords" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default"/>
+      </options>
+    </field>
+    <field name="approved" type="string" column="approved" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default">NO</option>
+      </options>
+    </field>
+    <field name="galleryicon" type="integer" column="galleryicon" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="user1" type="string" column="user1" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default"/>
+      </options>
+    </field>
+    <field name="user2" type="string" column="user2" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default"/>
+      </options>
+    </field>
+    <field name="user3" type="string" column="user3" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default"/>
+      </options>
+    </field>
+    <field name="user4" type="string" column="user4" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default"/>
+      </options>
+    </field>
+    <field name="urlPrefix" type="boolean" column="url_prefix" nullable="false">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="picRawIp" type="text" column="pic_raw_ip" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="picHdrIp" type="text" column="pic_hdr_ip" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="lasthitIp" type="text" column="lasthit_ip" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="position" type="integer" column="position" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="guestToken" type="string" column="guest_token" length="32" nullable="true">
+      <options>
+        <option name="fixed"/>
+        <option name="default"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

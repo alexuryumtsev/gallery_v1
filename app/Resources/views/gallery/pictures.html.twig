@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="grid">
+    <h1 class="h2 text-center">Gallery</h1>
+    <div class="row">
+
+                {% for post in posts %}
+
+                        <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                            <a data-fancybox="gallery" href="{{ asset("http://gallery.local/gallery/albums/" ~ post.filepath ~ post.filename) }}">
+                                <img class="img-responsive" src="{{ asset("http://gallery.local/gallery/albums/" ~ post.filepath ~ post.filename) }}" alt="">
+                            </a>
+                        </div>
+
+                {% endfor %}
+    </div>
+    </div>
+</div>
+
+{% endblock %}
